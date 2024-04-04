@@ -24,5 +24,58 @@
     <div id="resultadoAsignacion">
     </div>
   </section>
+  <script>
+    let alumnos = [];
+    document.getElementById("startButtonAlumnos").addEventListener("click", () => {
+      const numAlumnos = parseInt(prompt("Ingrese la cantidad de alumnos (entre 5 y 20):"));
+      if (numAlumnos >= 5 && numAlumnos <= 20) {
+        for (let i = 0; i < numAlumnos; i++) {
+          const nombre = prompt("Nombre del alumno " + (i + 1) + ":");
+          const edad = parseInt(prompt("Edad de " + nombre + ":"));
+          const genero = prompt("Género de " + nombre + " (M/F):").toUpperCase();
+          alumnos.push({ nombre, edad, genero });
+        }
+        document.getElementById("alumnos").innerHTML = "Registro completo";
+      } else {
+        alert("La cantidad de alumnos debe estar entre 5 y 20.");
+      }
+    });
+
+    document.getElementById("mostrarMayor").addEventListener("click", () => {
+      if (alumnos.length === 0) {
+        alert("Primero registre a los alumnos.");
+      } else {
+        const mayorEdad = alumnos.reduce((prev, current) => (prev.edad > current.edad) ? prev : current);
+        document.getElementById("resultado").innerHTML = "El alumno de mayor edad es: " + mayorEdad.nombre + ", género: " + mayorEdad.genero;
+      }
+    });
+
+    // Lógica para limpiar los datos del caso 1
+    document.getElementById("limpiarButton").addEventListener("click", () => {
+      alumnos = []; // Borrar datos de alumnos
+      document.getElementById("alumnos").innerHTML = ""; // Limpiar la sección de resultados
+      document.getElementById("resultado").innerHTML = ""; // Limpiar el resultado del alumno mayor
+    });
+    
+    document.getElementById("asignarButton").addEventListener("click", () => {
+      const genero = prompt("Género del estudiante (M/F):").toUpperCase();
+      const edad = parseInt(prompt("Edad del estudiante:"));
+      let academia = "Ejército Nacional";
+      let colorUniforme = "MARRON";
+
+      if (genero === "F" && edad > 14) {
+        academia = "Fuerza Aérea";
+        colorUniforme = "ROJO";
+      } else if (genero === "M" && edad > 14) {
+        academia = "Marina de Guerra";
+        colorUniforme = "VERDE";
+      }
+
+      document.getElementById("resultadoAsignacion").innerHTML = "El estudiante será enviado a la " + academia + " (Uniforme " + colorUniforme + ").";
+    });
+
+
+    
+  </script>
 </body>
 </html>
