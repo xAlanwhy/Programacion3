@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  section {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #333; /* Aumentamos el grosor del borde */
+    background-color: #fff;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px; /* Aumentamos el tamaño del botón */
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  input[type="text"] {
+    padding: 8px; /* Aumentamos el tamaño del campo de entrada de texto */
+    border: 2px solid #ccc; /* Aumentamos el grosor del borde */
+    border-radius: 4px;
+  }
+  
+  /* Estilo para los elementos con ID #alumnos, #resultado y #resultadoAsignacion */
+  #alumnos, #resultado, #resultadoAsignacion {
+    margin-top: 15px; /* Aumentamos el margen superior */
+    padding: 10px; /* Aumentamos el relleno interno */
+    border: 1px solid #333; /* Aumentamos el grosor del borde */
+  }
+  h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+  }
+  
